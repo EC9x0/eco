@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Gamer Profile</title>
+  <title>ECHOVERSE</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Google Font -->
+  <!-- Font -->
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
 
   <style>
@@ -18,22 +18,42 @@
 
     body {
       min-height: 100vh;
-      background: radial-gradient(circle at top, #2a003d, #05000a);
+      background: linear-gradient(270deg, #05000a, #2a003d, #05000a);
+      background-size: 600% 600%;
+      animation: bgMove 15s ease infinite;
       color: #e6ccff;
       display: flex;
       justify-content: center;
       align-items: center;
+      overflow: hidden;
+    }
+
+    @keyframes bgMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
 
     .card {
       width: 90%;
       max-width: 420px;
-      background: rgba(40, 0, 70, 0.75);
+      background: rgba(40, 0, 70, 0.8);
       border: 2px solid #a855f7;
       border-radius: 16px;
-      box-shadow: 0 0 25px #a855f7;
       padding: 30px;
       text-align: center;
+      box-shadow: 0 0 30px #a855f7;
+      animation: float 4s ease-in-out infinite, glow 2.5s ease-in-out infinite alternate;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
+    }
+
+    @keyframes glow {
+      from { box-shadow: 0 0 20px #7c3aed; }
+      to { box-shadow: 0 0 40px #c084fc; }
     }
 
     .avatar {
@@ -41,14 +61,20 @@
       height: 120px;
       border-radius: 50%;
       border: 3px solid #c084fc;
-      box-shadow: 0 0 20px #c084fc;
+      box-shadow: 0 0 25px #c084fc;
       margin-bottom: 20px;
+      animation: avatarPulse 3s infinite alternate;
+    }
+
+    @keyframes avatarPulse {
+      from { box-shadow: 0 0 15px #7c3aed; }
+      to { box-shadow: 0 0 35px #d8b4fe; }
     }
 
     h1 {
       font-size: 28px;
       color: #d8b4fe;
-      text-shadow: 0 0 10px #a855f7;
+      text-shadow: 0 0 12px #a855f7;
     }
 
     .tagline {
@@ -66,22 +92,25 @@
     .stat {
       flex: 1;
       margin: 0 5px;
-      padding: 10px;
+      padding: 12px;
       background: rgba(168, 85, 247, 0.15);
       border-radius: 10px;
       border: 1px solid #a855f7;
-      box-shadow: inset 0 0 10px rgba(168,85,247,0.5);
+      animation: statGlow 2s infinite alternate;
+    }
+
+    @keyframes statGlow {
+      from { box-shadow: inset 0 0 6px rgba(168,85,247,0.4); }
+      to { box-shadow: inset 0 0 14px rgba(216,180,254,0.7); }
     }
 
     .stat h2 {
       font-size: 18px;
-      color: #e9d5ff;
     }
 
     .stat p {
       font-size: 12px;
       margin-top: 5px;
-      color: #ddd6fe;
     }
 
     .links {
@@ -99,11 +128,28 @@
       background: linear-gradient(90deg, #7c3aed, #a855f7);
       box-shadow: 0 0 15px #7c3aed;
       transition: 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .links a::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: rgba(255,255,255,0.15);
+      transition: 0.4s;
+    }
+
+    .links a:hover::after {
+      left: 100%;
     }
 
     .links a:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 25px #c084fc;
+      transform: scale(1.07);
+      box-shadow: 0 0 30px #c084fc;
     }
 
     footer {
@@ -116,10 +162,10 @@
 
 <body>
   <div class="card">
-    <img class="avatar" src="https://i.imgur.com/8Km9tLL.png" alt="Avatar">
+    <img class="avatar" src="https://i.pinimg.com/736x/ae/31/c8/ae31c8133ba753a0fd618a50bf78f56d.jpg" alt="Avatar">
 
-    <h1>YOUR NAME</h1>
-    <p class="tagline">🎮 Gamer | 💜 Purple Vibes | ⚡ Always Grinding</p>
+    <h1>ECHOVERSE</h1>
+    <p class="tagline">TERI MA TERI BHEN LESBIANS</p>
 
     <div class="stats">
       <div class="stat">
@@ -137,15 +183,13 @@
     </div>
 
     <div class="links">
-      <a href="#">🎮 Steam</a>
+      <a href="#">🎮 YOUTUBE</a>
       <a href="#">📺 Twitch</a>
       <a href="#">📸 Instagram</a>
       <a href="#">💬 Discord</a>
     </div>
 
-    <footer>
-      © 2026 • Gamer Profile
-    </footer>
+    <footer>© 2026 • Gamer Profile</footer>
   </div>
 </body>
 </html>
